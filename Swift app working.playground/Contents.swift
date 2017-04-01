@@ -1,3 +1,9 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+
 //
 //  ViewController.swift
 //  Swift App
@@ -9,18 +15,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var theLabel: UILabel!
     
-    @IBOutlet weak var text1: UITextField!
+    var tapCount = 0
     
-    @IBOutlet weak var text2: UITextField!
     
-   
     @IBAction func buttonTapped(_ sender: Any) {
         
-theLabel.text = "Answer is \(Double(text1.text!)! + Double(text2.text!)!)"
+        tapCount = tapCount + 1
         
+        if tapCount >= 10 {
+            theLabel.text = "You tapped the button 10 times!"
+        }
         
     }
     
@@ -28,7 +35,7 @@ theLabel.text = "Answer is \(Double(text1.text!)! + Double(text2.text!)!)"
     
     @IBAction func secondButton(_ sender: Any) {
         
-                theLabel.text = "Buttons are cool!"
+        theLabel.text = "Buttons are cool!"
         
     }
     
@@ -37,14 +44,14 @@ theLabel.text = "Answer is \(Double(text1.text!)! + Double(text2.text!)!)"
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
